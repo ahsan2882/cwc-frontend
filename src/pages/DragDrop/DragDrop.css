@@ -1,0 +1,24 @@
+.console{
+    background-color: #414141;
+    height: 100vh;
+
+}
+.card-render{
+    height: 100vh;
+    background-color: #66B9BF;
+}
+
+.body-builder{
+    height:100vh;
+    width: 100vw;
+}
+
+.components {
+    height:100vh;
+
+    background-color: #EEAA7B;
+}
+
+.column { 
+    width:50vw;
+}
