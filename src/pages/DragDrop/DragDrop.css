@@ -1,11 +1,13 @@
 .console{
-    background-color: #414141;
+    border: 3px solid black;
     height: 100vh;
 
 }
 .card-render{
     height: 100vh;
-    background-color: #66B9BF;
+    border: 3px solid black;
+    overflow: auto;
+    background-color: grey;
 }
 
 .body-builder{
@@ -16,9 +18,17 @@
 .components {
     height:100vh;
 
-    background-color: #EEAA7B;
+    border: 3px solid black;
 }
 
 .column { 
     width:50vw;
+}
+
+h3{
+    text-align: center;
+}
+
+Input{
+    text-align: center;
 }
