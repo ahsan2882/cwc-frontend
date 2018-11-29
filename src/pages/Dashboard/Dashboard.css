@@ -1,11 +1,12 @@
 .console{
-    border: 3px solid black;
+    border: 1px solid black;
     height: 100vh;
+    overflow: scroll;
 
 }
 .card-render{
     height: 100vh;
-    border: 3px solid black;
+    border: 1px solid black;
     overflow: auto;
     background-color: grey;
 }
@@ -18,7 +19,7 @@
 .components {
     height:100vh;
 
-    border: 3px solid black;
+    border: 1px solid black;
 }
 
 .column { 
@@ -31,4 +32,11 @@ h3{
 
 Input{
     text-align: center;
+}
+
+.componentEditor {
+    padding: 10px;
+    margin-top: 1vh;
+    width: 100%;
+
 }
