@@ -41,7 +41,7 @@ class Dashboard extends Component {
     return (
       <div className='body-builder' >
         <Row>
-          <Col s={3}>
+          <Col s={3} className='paneGradient'>
             <div className='components'>
               <h3>Select Card Template</h3>
               <Input s={12} type='select' defaultValue='2' onChange={this.handleChange}>
@@ -54,10 +54,10 @@ class Dashboard extends Component {
           <Col s={6}>
             <div className='card-render'>
               <CardTemplate styling={this.state.styling} />
-            </div>s
+            </div>
           </Col>
 
-          <Col s={3}>
+          <Col s={3} className='paneGradient'>
             <div className='console'>
               <div className='inputs'>
                 <div className='componentEditor'>

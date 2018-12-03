@@ -1,15 +1,17 @@
 .console{
-    border: 1px solid black;
     height: 100vh;
     overflow: scroll;
-
 }
 .card-render{
     height: 100vh;
-    border: 1px solid black;
     overflow: auto;
-    background-color: grey;
+    background-color: #414141;
 }
+
+body {
+    background-color: white;
+}
+
 
 .body-builder{
     height:100vh;
@@ -18,8 +20,6 @@
 
 .components {
     height:100vh;
-
-    border: 1px solid black;
 }
 
 .column { 
@@ -27,11 +27,13 @@
 }
 
 h3{
-    text-align: center;
+    text-align: center; 
+    font-family: 'Roboto';
 }
 
 Input{
     text-align: center;
+    color: #414141;
 }
 
 .componentEditor {
