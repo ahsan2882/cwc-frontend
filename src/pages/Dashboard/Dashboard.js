@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Input, Collapsible, CollapsibleItem, Tabs, Tab } from 'react-materialize';
+import { Row, Col, Input, Collapsible, CollapsibleItem } from 'react-materialize';
 import './Dashboard.css';
 import CardTemplate from './card/CardTemplate';
 import CardOutput from './cardOutput/CardOutput';
