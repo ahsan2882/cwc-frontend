@@ -143,22 +143,26 @@ class CardOutput extends Component {
                     trigger={<Button>View Code</Button>}>
                     <Tabs className='tab-demo z-depth-1'>
                         <Tab title="HTML" active>
-                            <pre>
-                                <code>
-                                    {htmlString}
-                                </code>
-                            </pre>
+                            <div className='code'>
+                                <pre>
+                                    <code>
+                                        {htmlString}
+                                    </code>
+                                </pre>
+                            </div>
                         </Tab>
                         <Tab title="CSS">
-                            <pre>
-                                <code>
-                                    {cssString.css}
-                                </code>
-                            </pre>
+                            <div className='code'>
+                                <pre>
+                                    <code>
+                                        {cssString.css}
+                                    </code>
+                                </pre>
+                            </div>
                         </Tab>
                     </Tabs>
                 </Modal>
-            </div>
+            </div >
         );
     }
 }

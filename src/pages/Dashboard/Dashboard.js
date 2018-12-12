@@ -83,6 +83,7 @@ class Dashboard extends Component {
 
                     <Row>
                       <Input s={6} label="Text" defaultValue={this.state.styling.styling.cardTitle.text} onChange={(e) => this.handleCardChange(e, "cardTitle", "text")} />
+                      <Input s={6} label="Font Size" defaultValue={this.state.styling.styling.cardTitle.fontSize} onChange={(e) => this.handleCardChange(e, "cardTitle", "fontSize")} />
                       <Input s={6} label="Color" defaultValue={this.state.styling.styling.cardTitle.color} onChange={(e) => this.handleCardChange(e, "cardTitle", "color")} />
                       <Input s={6} label="Text Align" defaultValue={this.state.styling.styling.cardTitle.textAlign} onChange={(e) => this.handleCardChange(e, "cardTitle", "textAlign")} />
                       <Input s={6} label="Font Family" defaultValue={this.state.styling.styling.cardTitle.fontFamily} onChange={(e) => this.handleCardChange(e, "cardTitle", "fontFamily")} />
@@ -187,6 +188,7 @@ var mockStyleObj = {
       "backgroundColor": "white",
     },
     "cardTitle": {
+      "fontSize": "4.0rem",
       "fontFamily": "arial",
       "text": "This is a demo",
       "color": "black",
