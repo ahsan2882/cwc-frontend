@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Row, Col, Input } from 'react-materialize';
+import { Row, Col, Input, Collapsible, CollapsibleItem } from 'react-materialize';
 import './Dashboard.css';
 import CardTemplate from './card/CardTemplate';
+import CardOutput from './cardOutput/CardOutput';
 
 class Dashboard extends Component {
   state = {
@@ -43,7 +44,7 @@ class Dashboard extends Component {
         <Row>
           <Col s={3} className='paneGradient'>
             <div className='components'>
-              <h3>Select Card Template</h3>
+              <h3>Card Template</h3>
               <Input s={12} type='select' defaultValue='2' onChange={this.handleChange}>
                 {cardOptions}
               </Input>
@@ -59,102 +60,109 @@ class Dashboard extends Component {
 
           <Col s={3} className='paneGradient'>
             <div className='console'>
-              <div className='inputs'>
-                <div className='componentEditor'>
-                  <h3>Card</h3>
-                  <Row>
-                    <Input s={6} label="Max Width" defaultValue={this.state.styling.styling.card.maxWidth} onChange={(e) => this.handleCardChange(e, "card", "maxWidth")} />
-                    <Input s={6} label="Text Align" defaultValue={this.state.styling.styling.card.textAlign} onChange={(e) => this.handleCardChange(e, "card", "textAlign")} />
-                    <Input s={6} label="Font Family" defaultValue={this.state.styling.styling.card.fontFamily} onChange={(e) => this.handleCardChange(e, "card", "fontFamily")} />
-                    <Input s={6} label="Display" defaultValue={this.state.styling.styling.card.display} onChange={(e) => this.handleCardChange(e, "card", "display")} />
-                    <Input s={6} label="Border" defaultValue={this.state.styling.styling.card.border} onChange={(e) => this.handleCardChange(e, "card", "border")} />
-                    <Input s={6} label="Background Color" defaultValue={this.state.styling.styling.card.backgroundColor} onChange={(e) => this.handleCardChange(e, "card", "backgroundColor")} />
-                    <Input s={6} label="Box Shadow" defaultValue={this.state.styling.styling.card.boxShadow} onChange={(e) => this.handleCardChange(e, "card", "boxShadow")} />
-                    <Input s={6} label="Margin" defaultValue={this.state.styling.styling.card.margin} onChange={(e) => this.handleCardChange(e, "card", "margin")} />
-                  </Row>
+              <h3>Card Editor</h3>
 
-                </div>
-                <div className='componentEditor'>
-                  <h3>Title</h3>
-                  <Row>
-                    <Input s={6} label="Text" defaultValue={this.state.styling.styling.cardTitle.text} onChange={(e) => this.handleCardChange(e, "cardTitle", "text")} />
-                    <Input s={6} label="Color" defaultValue={this.state.styling.styling.cardTitle.color} onChange={(e) => this.handleCardChange(e, "cardTitle", "color")} />
-                    <Input s={6} label="Text Align" defaultValue={this.state.styling.styling.cardTitle.textAlign} onChange={(e) => this.handleCardChange(e, "cardTitle", "textAlign")} />
-                    <Input s={6} label="Font Family" defaultValue={this.state.styling.styling.cardTitle.fontFamily} onChange={(e) => this.handleCardChange(e, "cardTitle", "fontFamily")} />
-                    <Input s={6} label="Display" defaultValue={this.state.styling.styling.cardTitle.display} onChange={(e) => this.handleCardChange(e, "cardTitle", "display")} />
+              <Collapsible accordion>
+                <CollapsibleItem header='Body' icon='dashboard'>
+                  <div className='componentEditor'>
+                    <Row>
+                      <Input s={6} label="Max Width" defaultValue={this.state.styling.styling.card.maxWidth} onChange={(e) => this.handleCardChange(e, "card", "maxWidth")} />
+                      <Input s={6} label="Text Align" defaultValue={this.state.styling.styling.card.textAlign} onChange={(e) => this.handleCardChange(e, "card", "textAlign")} />
+                      <Input s={6} label="Font Family" defaultValue={this.state.styling.styling.card.fontFamily} onChange={(e) => this.handleCardChange(e, "card", "fontFamily")} />
+                      <Input s={6} label="Display" defaultValue={this.state.styling.styling.card.display} onChange={(e) => this.handleCardChange(e, "card", "display")} />
+                      <Input s={6} label="Border" defaultValue={this.state.styling.styling.card.border} onChange={(e) => this.handleCardChange(e, "card", "border")} />
+                      <Input s={6} label="Background Color" defaultValue={this.state.styling.styling.card.backgroundColor} onChange={(e) => this.handleCardChange(e, "card", "backgroundColor")} />
+                      <Input s={6} label="Box Shadow" defaultValue={this.state.styling.styling.card.boxShadow} onChange={(e) => this.handleCardChange(e, "card", "boxShadow")} />
+                      <Input s={6} label="Margin" defaultValue={this.state.styling.styling.card.margin} onChange={(e) => this.handleCardChange(e, "card", "margin")} />
+                    </Row>
 
-                  </Row>
+                  </div>
+                </CollapsibleItem>
+                <CollapsibleItem header='Title' icon='title'>
+                  <div className='componentEditor'>
 
-                </div>
-                <div className='componentEditor'>
-                  <h3>Image</h3>
-                  <Row>
-                    <Input s={6} label="Src" defaultValue={this.state.styling.styling.cardImg.src} onChange={(e) => this.handleCardChange(e, "cardImg", "src")} />
-                    <Input s={6} label="Alt" defaultValue={this.state.styling.styling.cardImg.alt} onChange={(e) => this.handleCardChange(e, "cardImg", "alt")} />
-                    <Input s={6} label="Height" defaultValue={this.state.styling.styling.cardImg.height} onChange={(e) => this.handleCardChange(e, "cardImg", "height")} />
-                    <Input s={6} label="Width" defaultValue={this.state.styling.styling.cardImg.width} onChange={(e) => this.handleCardChange(e, "cardImg", "width")} />
-                    <Input s={6} label="Display" defaultValue={this.state.styling.styling.cardImg.display} onChange={(e) => this.handleCardChange(e, "cardImg", "display")} />
-                  </Row>
+                    <Row>
+                      <Input s={6} label="Text" defaultValue={this.state.styling.styling.cardTitle.text} onChange={(e) => this.handleCardChange(e, "cardTitle", "text")} />
+                      <Input s={6} label="Font Size" defaultValue={this.state.styling.styling.cardTitle.fontSize} onChange={(e) => this.handleCardChange(e, "cardTitle", "fontSize")} />
+                      <Input s={6} label="Color" defaultValue={this.state.styling.styling.cardTitle.color} onChange={(e) => this.handleCardChange(e, "cardTitle", "color")} />
+                      <Input s={6} label="Text Align" defaultValue={this.state.styling.styling.cardTitle.textAlign} onChange={(e) => this.handleCardChange(e, "cardTitle", "textAlign")} />
+                      <Input s={6} label="Font Family" defaultValue={this.state.styling.styling.cardTitle.fontFamily} onChange={(e) => this.handleCardChange(e, "cardTitle", "fontFamily")} />
+                      <Input s={6} label="Display" defaultValue={this.state.styling.styling.cardTitle.display} onChange={(e) => this.handleCardChange(e, "cardTitle", "display")} />
 
-                </div>
-                <div className='componentEditor'>
-                  <h3>Paragraph 1</h3>
-                  <Row>
-                    <Input s={6} label="Text" defaultValue={this.state.styling.styling.cardParagraph1.text} onChange={(e) => this.handleCardChange(e, "cardParagraph1", "text")} />
-                    <Input s={6} label="Font Size" defaultValue={this.state.styling.styling.cardParagraph1.fontSize} onChange={(e) => this.handleCardChange(e, "cardParagraph1", "fontSize")} />
-                    <Input s={6} label="Font Family" defaultValue={this.state.styling.styling.cardParagraph1.fontFamily} onChange={(e) => this.handleCardChange(e, "cardParagraph1", "fontFamily")} />
-                    <Input s={6} label="Color" defaultValue={this.state.styling.styling.cardParagraph1.color} onChange={(e) => this.handleCardChange(e, "cardParagraph1", "color")} />
-                    <Input s={6} label="Padding" defaultValue={this.state.styling.styling.cardParagraph1.padding} onChange={(e) => this.handleCardChange(e, "cardParagraph1", "padding")} />
-                    <Input s={6} label="Display" defaultValue={this.state.styling.styling.cardParagraph1.display} onChange={(e) => this.handleCardChange(e, "cardParagraph1", "display")} />
-                    <Input s={6} label="Border" defaultValue={this.state.styling.styling.cardParagraph1.border} onChange={(e) => this.handleCardChange(e, "cardParagraph1", "border")} />
-                  </Row>
+                    </Row>
 
-                </div>
-                <div className='componentEditor'>
-                  <h3>Paragraph 2</h3>
-                  <Row>
-                    <Input s={6} label="Text" defaultValue={this.state.styling.styling.cardParagraph2.text} onChange={(e) => this.handleCardChange(e, "cardParagraph2", "text")} />
-                    <Input s={6} label="Font Size" defaultValue={this.state.styling.styling.cardParagraph2.fontSize} onChange={(e) => this.handleCardChange(e, "cardParagraph2", "fontSize")} />
-                    <Input s={6} label="Font Family" defaultValue={this.state.styling.styling.cardParagraph2.fontFamily} onChange={(e) => this.handleCardChange(e, "cardParagraph2", "fontFamily")} />
-                    <Input s={6} label="Color" defaultValue={this.state.styling.styling.cardParagraph2.color} onChange={(e) => this.handleCardChange(e, "cardParagraph2", "color")} />
-                    <Input s={6} label="Padding" defaultValue={this.state.styling.styling.cardParagraph2.padding} onChange={(e) => this.handleCardChange(e, "cardParagraph2", "padding")} />
-                    <Input s={6} label="Display" defaultValue={this.state.styling.styling.cardParagraph2.display} onChange={(e) => this.handleCardChange(e, "cardParagraph2", "display")} />
-                    <Input s={6} label="Padding" defaultValue={this.state.styling.styling.cardParagraph2.border} onChange={(e) => this.handleCardChange(e, "cardParagraph2", "border")} />
-                  </Row>
+                  </div>
+                </CollapsibleItem>
+                <CollapsibleItem header='Image' icon='image'>
+                  <div className='componentEditor'>
+                    <Row>
+                      <Input s={6} label="Src" defaultValue={this.state.styling.styling.cardImg.src} onChange={(e) => this.handleCardChange(e, "cardImg", "src")} />
+                      <Input s={6} label="Alt" defaultValue={this.state.styling.styling.cardImg.alt} onChange={(e) => this.handleCardChange(e, "cardImg", "alt")} />
+                      <Input s={6} label="Height" defaultValue={this.state.styling.styling.cardImg.height} onChange={(e) => this.handleCardChange(e, "cardImg", "height")} />
+                      <Input s={6} label="Width" defaultValue={this.state.styling.styling.cardImg.width} onChange={(e) => this.handleCardChange(e, "cardImg", "width")} />
+                      <Input s={6} label="Display" defaultValue={this.state.styling.styling.cardImg.display} onChange={(e) => this.handleCardChange(e, "cardImg", "display")} />
+                    </Row>
+                  </div>
+                </CollapsibleItem>
+                <CollapsibleItem header='Paragraph 1' icon='short_text'>
 
-                </div>
-                <div className='componentEditor'>
-                  <h3>Paragraph 3</h3>
-                  <Row>
-                    <Input s={6} label="Text" defaultValue={this.state.styling.styling.cardParagraph3.text} onChange={(e) => this.handleCardChange(e, "cardParagraph3", "text")} />
-                    <Input s={6} label="Font Size" defaultValue={this.state.styling.styling.cardParagraph3.fontSize} onChange={(e) => this.handleCardChange(e, "cardParagraph3", "fontSize")} />
-                    <Input s={6} label="Font Family" defaultValue={this.state.styling.styling.cardParagraph3.fontFamily} onChange={(e) => this.handleCardChange(e, "cardParagraph3", "fontFamily")} />
-                    <Input s={6} label="Color" defaultValue={this.state.styling.styling.cardParagraph3.color} onChange={(e) => this.handleCardChange(e, "cardParagraph3", "color")} />
-                    <Input s={6} label="Padding" defaultValue={this.state.styling.styling.cardParagraph3.padding} onChange={(e) => this.handleCardChange(e, "cardParagraph3", "padding")} />
-                    <Input s={6} label="Display" defaultValue={this.state.styling.styling.cardParagraph3.display} onChange={(e) => this.handleCardChange(e, "cardParagraph3", "display")} />
-                    <Input s={6} label="Padding" defaultValue={this.state.styling.styling.cardParagraph3.border} onChange={(e) => this.handleCardChange(e, "cardParagraph3", "border")} />
-                  </Row>
+                  <div className='componentEditor'>
+                    <Row>
+                      <Input s={6} label="Text" defaultValue={this.state.styling.styling.cardParagraph1.text} onChange={(e) => this.handleCardChange(e, "cardParagraph1", "text")} />
+                      <Input s={6} label="Font Size" defaultValue={this.state.styling.styling.cardParagraph1.fontSize} onChange={(e) => this.handleCardChange(e, "cardParagraph1", "fontSize")} />
+                      <Input s={6} label="Font Family" defaultValue={this.state.styling.styling.cardParagraph1.fontFamily} onChange={(e) => this.handleCardChange(e, "cardParagraph1", "fontFamily")} />
+                      <Input s={6} label="Color" defaultValue={this.state.styling.styling.cardParagraph1.color} onChange={(e) => this.handleCardChange(e, "cardParagraph1", "color")} />
+                      <Input s={6} label="Padding" defaultValue={this.state.styling.styling.cardParagraph1.padding} onChange={(e) => this.handleCardChange(e, "cardParagraph1", "padding")} />
+                      <Input s={6} label="Display" defaultValue={this.state.styling.styling.cardParagraph1.display} onChange={(e) => this.handleCardChange(e, "cardParagraph1", "display")} />
+                      <Input s={6} label="Border" defaultValue={this.state.styling.styling.cardParagraph1.border} onChange={(e) => this.handleCardChange(e, "cardParagraph1", "border")} />
+                    </Row>
 
-                </div>
-                <div className='componentEditor'>
-                  <h3>Button</h3>
-                  <Row>
-                    <Input s={6} label="Text" defaultValue={this.state.styling.styling.cardButton.text} onChange={(e) => this.handleCardChange(e, "cardButton", "text")} />
-                    <Input s={6} label="Height" defaultValue={this.state.styling.styling.cardButton.height} onChange={(e) => this.handleCardChange(e, "cardButton", "height")} />
-                    <Input s={6} label="Max Width" defaultValue={this.state.styling.styling.cardButton.maxWidth} onChange={(e) => this.handleCardChange(e, "cardButton", "maxWidth")} />
-                    <Input s={6} label="Text Align" defaultValue={this.state.styling.styling.cardButton.textAlign} onChange={(e) => this.handleCardChange(e, "cardButton", "textAlign")} />
-                    <Input s={6} label="Font Family" defaultValue={this.state.styling.styling.cardButton.fontFamily} onChange={(e) => this.handleCardChange(e, "cardButton", "fontFamily")} />
-                    <Input s={6} label="Display" defaultValue={this.state.styling.styling.cardButton.display} onChange={(e) => this.handleCardChange(e, "cardButton", "display")} />
-                    <Input s={6} label="Border" defaultValue={this.state.styling.styling.cardButton.border} onChange={(e) => this.handleCardChange(e, "cardButton", "border")} />
-                    <Input s={6} label="Background Color" defaultValue={this.state.styling.styling.cardButton.backgroundColor} onChange={(e) => this.handleCardChange(e, "cardButton", "backgroundColor")} />
-                    <Input s={6} label="Box Shadow" defaultValue={this.state.styling.styling.cardButton.boxShadow} onChange={(e) => this.handleCardChange(e, "cardButton", "boxShadow")} />
-                    <Input s={6} label="Margin" defaultValue={this.state.styling.styling.cardButton.margin} onChange={(e) => this.handleCardChange(e, "cardButton", "margin")} />
-                  </Row>
-
-
-                </div>
-
-              </div>
+                  </div>
+                </CollapsibleItem>
+                <CollapsibleItem header='Paragraph 2' icon='short_text'>
+                  <div className='componentEditor'>
+                    <Row>
+                      <Input s={6} label="Text" defaultValue={this.state.styling.styling.cardParagraph2.text} onChange={(e) => this.handleCardChange(e, "cardParagraph2", "text")} />
+                      <Input s={6} label="Font Size" defaultValue={this.state.styling.styling.cardParagraph2.fontSize} onChange={(e) => this.handleCardChange(e, "cardParagraph2", "fontSize")} />
+                      <Input s={6} label="Font Family" defaultValue={this.state.styling.styling.cardParagraph2.fontFamily} onChange={(e) => this.handleCardChange(e, "cardParagraph2", "fontFamily")} />
+                      <Input s={6} label="Color" defaultValue={this.state.styling.styling.cardParagraph2.color} onChange={(e) => this.handleCardChange(e, "cardParagraph2", "color")} />
+                      <Input s={6} label="Padding" defaultValue={this.state.styling.styling.cardParagraph2.padding} onChange={(e) => this.handleCardChange(e, "cardParagraph2", "padding")} />
+                      <Input s={6} label="Display" defaultValue={this.state.styling.styling.cardParagraph2.display} onChange={(e) => this.handleCardChange(e, "cardParagraph2", "display")} />
+                      <Input s={6} label="Padding" defaultValue={this.state.styling.styling.cardParagraph2.border} onChange={(e) => this.handleCardChange(e, "cardParagraph2", "border")} />
+                    </Row>
+                  </div>
+                </CollapsibleItem>
+                <CollapsibleItem header='Paragraph 3' icon='short_text'>
+                  <div className='componentEditor'>
+                    <Row>
+                      <Input s={6} label="Text" defaultValue={this.state.styling.styling.cardParagraph3.text} onChange={(e) => this.handleCardChange(e, "cardParagraph3", "text")} />
+                      <Input s={6} label="Font Size" defaultValue={this.state.styling.styling.cardParagraph3.fontSize} onChange={(e) => this.handleCardChange(e, "cardParagraph3", "fontSize")} />
+                      <Input s={6} label="Font Family" defaultValue={this.state.styling.styling.cardParagraph3.fontFamily} onChange={(e) => this.handleCardChange(e, "cardParagraph3", "fontFamily")} />
+                      <Input s={6} label="Color" defaultValue={this.state.styling.styling.cardParagraph3.color} onChange={(e) => this.handleCardChange(e, "cardParagraph3", "color")} />
+                      <Input s={6} label="Padding" defaultValue={this.state.styling.styling.cardParagraph3.padding} onChange={(e) => this.handleCardChange(e, "cardParagraph3", "padding")} />
+                      <Input s={6} label="Display" defaultValue={this.state.styling.styling.cardParagraph3.display} onChange={(e) => this.handleCardChange(e, "cardParagraph3", "display")} />
+                      <Input s={6} label="Padding" defaultValue={this.state.styling.styling.cardParagraph3.border} onChange={(e) => this.handleCardChange(e, "cardParagraph3", "border")} />
+                    </Row>
+                  </div>
+                </CollapsibleItem>
+                <CollapsibleItem header='Button' icon='radio_button_unchecked'>
+                  <div className='componentEditor'>
+                    <Row>
+                      <Input s={6} label="Text" defaultValue={this.state.styling.styling.cardButton.text} onChange={(e) => this.handleCardChange(e, "cardButton", "text")} />
+                      <Input s={6} label="Height" defaultValue={this.state.styling.styling.cardButton.height} onChange={(e) => this.handleCardChange(e, "cardButton", "height")} />
+                      <Input s={6} label="Max Width" defaultValue={this.state.styling.styling.cardButton.maxWidth} onChange={(e) => this.handleCardChange(e, "cardButton", "maxWidth")} />
+                      <Input s={6} label="Text Align" defaultValue={this.state.styling.styling.cardButton.textAlign} onChange={(e) => this.handleCardChange(e, "cardButton", "textAlign")} />
+                      <Input s={6} label="Font Family" defaultValue={this.state.styling.styling.cardButton.fontFamily} onChange={(e) => this.handleCardChange(e, "cardButton", "fontFamily")} />
+                      <Input s={6} label="Display" defaultValue={this.state.styling.styling.cardButton.display} onChange={(e) => this.handleCardChange(e, "cardButton", "display")} />
+                      <Input s={6} label="Border" defaultValue={this.state.styling.styling.cardButton.border} onChange={(e) => this.handleCardChange(e, "cardButton", "border")} />
+                      <Input s={6} label="Background Color" defaultValue={this.state.styling.styling.cardButton.backgroundColor} onChange={(e) => this.handleCardChange(e, "cardButton", "backgroundColor")} />
+                      <Input s={6} label="Box Shadow" defaultValue={this.state.styling.styling.cardButton.boxShadow} onChange={(e) => this.handleCardChange(e, "cardButton", "boxShadow")} />
+                      <Input s={6} label="Margin" defaultValue={this.state.styling.styling.cardButton.margin} onChange={(e) => this.handleCardChange(e, "cardButton", "margin")} />
+                    </Row>
+                  </div>
+                </CollapsibleItem>
+              </Collapsible>
+              <CardOutput css={this.state.styling.styling} />
             </div>
           </Col>
         </Row>
@@ -180,6 +188,7 @@ var mockStyleObj = {
       "backgroundColor": "white",
     },
     "cardTitle": {
+      "fontSize": "4.0rem",
       "fontFamily": "arial",
       "text": "This is a demo",
       "color": "black",

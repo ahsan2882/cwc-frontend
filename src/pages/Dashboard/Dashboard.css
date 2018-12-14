@@ -1,16 +1,29 @@
 .console{
     height: 100vh;
     overflow: scroll;
+    font-family: 'Open Sans';
+    color: #414141;
 }
 .card-render{
     height: 100vh;
     overflow: auto;
     background-color: #414141;
-}
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
+}
+.components {
+    font-family: 'Open Sans';
+    color: #414141;
+}
 body {
     background-color: white;
 }
+
+label.active {
+    color: #414141;
+}
+
+
 
 
 .body-builder{
@@ -41,4 +54,12 @@ Input{
     margin-top: 1vh;
     width: 100%;
 
+}
+
+.collapsible-header:hover{
+    background-color: #EEAA7B;
+}
+
+input.select-dropdown  ul li{
+    color: red;
 }

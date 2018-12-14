@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import './CardTemplate.css';
-let x = 1;
-
 class CardTemplate extends Component {
     constructor(props) {
         super(props);
@@ -13,9 +11,9 @@ class CardTemplate extends Component {
 
     componentWillReceiveProps(nextProps) {
 
-        this.state = {
+        this.setState({
             styling: this.props.styling.styling
-        }
+        });
 
     }
     render() {
@@ -28,8 +26,6 @@ class CardTemplate extends Component {
         let cardButton = this.state.styling.cardButton;
 
         let ptext1 = this.state.styling.cardTitle.text;
-        console.log("PROPS: CARD TITLE: ", this.props.styling.styling.cardTitle);
-        console.log("STATE: CARD TITLE: ", cardTitle);
         return (
             <div>
                 <div style={cardBody}>
