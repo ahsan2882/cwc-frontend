@@ -15,15 +15,15 @@ class CardOutput extends Component {
 
     componentWillReceiveProps(nextProps) {
 
-        this.state = {
+        this.setState({
             css: this.props.css
-        }
+        });
 
     }
 
+
     turnToRegularCSS = (css) => {
         let testing = Object.assign({}, css);//make a clone of the object so we can delete stuff and not cause the app to crash
-        let text = [];
 
         //This loops through the object and anywhere where display = none, will remove from the object
         for (var key in testing) {
@@ -90,7 +90,6 @@ class CardOutput extends Component {
     createHTMLString = (classesObj, textObject) => {
         let outputHTML = "";
         let cssClassNames = Object.assign({}, classesObj);
-        console.log(textObject);
         outputHTML += '<div class="card"> \n';
         let x = 0;
         for (var key in cssClassNames) {
@@ -133,13 +132,13 @@ class CardOutput extends Component {
     }
 
     render() {
-        let userCSS = this.turnToRegularCSS(this.state.css); //create nice css for the user
-        let cssString = this.convertToString(userCSS);
-        let htmlString = this.createHTMLString(userCSS, cssString.text);
+        let userCSS = this.turnToRegularCSS(this.state.css); //returns the cleaned css object & the text object
+        let cssString = this.convertToString(userCSS); // creates the CSS string 
+        let htmlString = this.createHTMLString(userCSS, cssString.text); // creates the html string & content for it 
         return (
             <div>
                 <Modal
-                    header='HTML & CSS'
+                    header='Code Viewer'
                     trigger={<Button>View Code</Button>}>
                     <Tabs className='tab-demo z-depth-1'>
                         <Tab title="HTML" active>

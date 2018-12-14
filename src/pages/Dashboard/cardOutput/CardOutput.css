@@ -11,3 +11,43 @@
 .code pre {
     margin-left: 1rem;
 }
+
+.tabs .tab a{
+    color:#66B9BF;
+} /*Black color to the text*/
+
+.tabs .tab a:hover {
+    background-color:#eee;
+    color:#66B9BF;
+} /*Text color on hover*/
+
+.tabs .tab a.active {
+    background-color:#fff;
+    color:#66B9BF;
+} /*Background and text color when a tab is active*/
+
+.tabs .indicator {
+    background-color:#66B9BF;
+} /*Color of underline*/
+
+.modal-content h4 {
+    text-align: center;
+    color: #414141;
+}
+
+.modal-content {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.modal-footer button {
+    color: #fff;
+}
+
+.modal-footer button {
+    background-color: #66B9BF;
+}
+
+.modal-footer button:hover {
+    background-color: hsl(184, 41%, 45%)
+
+}

@@ -11,9 +11,9 @@ class CardTemplate extends Component {
 
     componentWillReceiveProps(nextProps) {
 
-        this.state = {
+        this.setState({
             styling: this.props.styling.styling
-        }
+        });
 
     }
     render() {
