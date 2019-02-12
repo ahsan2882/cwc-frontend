@@ -1,27 +1,17 @@
 import React, { Component } from 'react';
 import { Modal, Button, Tab, Tabs } from 'react-materialize';
 import './CardOutput.css';
+import Prism from 'prismjs';
+import './prism.css';
 var rename = require('deep-rename-keys');
 
 class CardOutput extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            html: "",
-            css: this.props.css
-        }
+    componentDidMount() { //Initialises Syntax Hightlighting
+        Prism.highlightAll();
     }
-
-    componentWillReceiveProps(nextProps) {
-
-        this.setState({
-            css: this.props.css
-        });
-
+    componentDidUpdate() { // Keeps Syntax Highlighting on Page Re-Rendering 
+        Prism.highlightAll();
     }
-
-
     turnToRegularCSS = (css) => {
         let testing = Object.assign({}, css);//make a clone of the object so we can delete stuff and not cause the app to crash
 
@@ -132,7 +122,7 @@ class CardOutput extends Component {
     }
 
     render() {
-        let userCSS = this.turnToRegularCSS(this.state.css); //returns the cleaned css object & the text object
+        let userCSS = this.turnToRegularCSS(this.props.css); //returns the cleaned css object & the text object
         let cssString = this.convertToString(userCSS); // creates the CSS string 
         let htmlString = this.createHTMLString(userCSS, cssString.text); // creates the html string & content for it 
         return (
@@ -144,7 +134,7 @@ class CardOutput extends Component {
                         <Tab title="HTML" active>
                             <div className='code'>
                                 <pre>
-                                    <code>
+                                    <code className='language-html'>
                                         {htmlString}
                                     </code>
                                 </pre>
@@ -153,7 +143,7 @@ class CardOutput extends Component {
                         <Tab title="CSS">
                             <div className='code'>
                                 <pre>
-                                    <code>
+                                    <code className='language-css'>
                                         {cssString.css}
                                     </code>
                                 </pre>
