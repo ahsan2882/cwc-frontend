@@ -7,8 +7,7 @@ import CardOutput from './cardOutput/CardOutput';
 class Dashboard extends Component {
   state = {
     "data": mockJson,
-    "styling": mockJson[0],
-    "highlight": null
+    "styling": mockJson[0]
   }
 
 
@@ -32,13 +31,6 @@ class Dashboard extends Component {
         }
       }
     }))
-  }
-  highlightOnMouseEnter = (elementName) => {
-    this.setState({ highlight: elementName });
-  }
-
-  deHighlightMouseEnter = (elementName) => {
-    this.setState({ highlight: "none" });
   }
   createInputBoxes = (cardProperties) => {
     let elementArray = Object.keys(cardProperties).map((element, index) => {
@@ -64,7 +56,6 @@ class Dashboard extends Component {
       );
     })
 
-    let accordion = this.createInputBoxes(this.state.styling.styling)
     return (
       <div className='body-builder' >
         <Row>
@@ -89,7 +80,7 @@ class Dashboard extends Component {
               <h3>Card Editor</h3>
 
               <Collapsible accordion>
-                <CollapsibleItem header='Body' icon='dashboard' onMouseEnter={() => this.highlightOnMouseEnter("body")} onMouseLeave={() => this.deHighlightMouseEnter("not body")}>
+                <CollapsibleItem header='Body' icon='dashboard' >
                   <div className='componentEditor'>
                     <Row>
                       <Input s={6} label="Max Width" value={this.state.styling.styling.card.maxWidth} onChange={(e) => this.handleCardChange(e, "card", "maxWidth")} />
@@ -100,6 +91,7 @@ class Dashboard extends Component {
                       <Input s={6} label="Background Color" value={this.state.styling.styling.card.backgroundColor} onChange={(e) => this.handleCardChange(e, "card", "backgroundColor")} />
                       <Input s={6} label="Box Shadow" value={this.state.styling.styling.card.boxShadow} onChange={(e) => this.handleCardChange(e, "card", "boxShadow")} />
                       <Input s={6} label="Margin" value={this.state.styling.styling.card.margin} onChange={(e) => this.handleCardChange(e, "card", "margin")} />
+                      <Input s={6} label="Border Radius" value={this.state.styling.styling.card.borderRadius} onChange={(e) => this.handleCardChange(e, "card", "borderRadius")} />
                     </Row>
 
                   </div>
@@ -114,6 +106,9 @@ class Dashboard extends Component {
                       <Input s={6} label="Text Align" value={this.state.styling.styling.cardTitle.textAlign} onChange={(e) => this.handleCardChange(e, "cardTitle", "textAlign")} />
                       <Input s={6} label="Font Family" value={this.state.styling.styling.cardTitle.fontFamily} onChange={(e) => this.handleCardChange(e, "cardTitle", "fontFamily")} />
                       <Input s={6} label="Display" value={this.state.styling.styling.cardTitle.display} onChange={(e) => this.handleCardChange(e, "cardTitle", "display")} />
+                      <Input s={6} label="Background Color" value={this.state.styling.styling.cardTitle.backgroundColor} onChange={(e) => this.handleCardChange(e, "cardTitle", "backgroundColor")} />
+                      <Input s={6} label="Border Radius" value={this.state.styling.styling.cardTitle.borderRadius} onChange={(e) => this.handleCardChange(e, "cardTitle", "borderRadius")} />
+
 
                     </Row>
 
@@ -127,6 +122,10 @@ class Dashboard extends Component {
                       <Input s={6} label="Height" value={this.state.styling.styling.cardImg.height} onChange={(e) => this.handleCardChange(e, "cardImg", "height")} />
                       <Input s={6} label="Width" value={this.state.styling.styling.cardImg.width} onChange={(e) => this.handleCardChange(e, "cardImg", "width")} />
                       <Input s={6} label="Display" value={this.state.styling.styling.cardImg.display} onChange={(e) => this.handleCardChange(e, "cardImg", "display")} />
+                      <Input s={6} label="Min Height" value={this.state.styling.styling.cardImg.minHeight} onChange={(e) => this.handleCardChange(e, "cardImg", "minHeight")} />
+                      <Input s={6} label="Background Size" value={this.state.styling.styling.cardImg.backgroundSize} onChange={(e) => this.handleCardChange(e, "cardImg", "backgroundSize")} />
+                      <Input s={6} label="Border Radius" value={this.state.styling.styling.cardImg.borderRadius} onChange={(e) => this.handleCardChange(e, "cardImg", "borderRadius")} />
+
                     </Row>
                   </div>
                 </CollapsibleItem>
@@ -141,6 +140,9 @@ class Dashboard extends Component {
                       <Input s={6} label="Padding" value={this.state.styling.styling.cardParagraph1.padding} onChange={(e) => this.handleCardChange(e, "cardParagraph1", "padding")} />
                       <Input s={6} label="Display" value={this.state.styling.styling.cardParagraph1.display} onChange={(e) => this.handleCardChange(e, "cardParagraph1", "display")} />
                       <Input s={6} label="Border" value={this.state.styling.styling.cardParagraph1.border} onChange={(e) => this.handleCardChange(e, "cardParagraph1", "border")} />
+                      <Input s={6} label="Background Color" value={this.state.styling.styling.cardParagraph1.backgroundColor} onChange={(e) => this.handleCardChange(e, "cardParagraph1", "backgroundColor")} />
+                      <Input s={6} label="Border Radius" value={this.state.styling.styling.cardParagraph1.borderRadius} onChange={(e) => this.handleCardChange(e, "cardParagraph1", "borderRadius")} />
+
                     </Row>
 
                   </div>
@@ -155,6 +157,10 @@ class Dashboard extends Component {
                       <Input s={6} label="Padding" value={this.state.styling.styling.cardParagraph2.padding} onChange={(e) => this.handleCardChange(e, "cardParagraph2", "padding")} />
                       <Input s={6} label="Display" value={this.state.styling.styling.cardParagraph2.display} onChange={(e) => this.handleCardChange(e, "cardParagraph2", "display")} />
                       <Input s={6} label="Padding" value={this.state.styling.styling.cardParagraph2.border} onChange={(e) => this.handleCardChange(e, "cardParagraph2", "border")} />
+                      <Input s={6} label="Background Color" value={this.state.styling.styling.cardParagraph2.backgroundColor} onChange={(e) => this.handleCardChange(e, "cardParagraph2", "backgroundColor")} />
+                      <Input s={6} label="Border Radius" value={this.state.styling.styling.cardParagraph2.borderRadius} onChange={(e) => this.handleCardChange(e, "cardParagraph2", "borderRadius")} />
+
+
                     </Row>
                   </div>
                 </CollapsibleItem>
@@ -168,6 +174,10 @@ class Dashboard extends Component {
                       <Input s={6} label="Padding" value={this.state.styling.styling.cardParagraph3.padding} onChange={(e) => this.handleCardChange(e, "cardParagraph3", "padding")} />
                       <Input s={6} label="Display" value={this.state.styling.styling.cardParagraph3.display} onChange={(e) => this.handleCardChange(e, "cardParagraph3", "display")} />
                       <Input s={6} label="Padding" value={this.state.styling.styling.cardParagraph3.border} onChange={(e) => this.handleCardChange(e, "cardParagraph3", "border")} />
+                      <Input s={6} label="Background Color" value={this.state.styling.styling.cardParagraph3.backgroundColor} onChange={(e) => this.handleCardChange(e, "cardParagraph3", "backgroundColor")} />
+                      <Input s={6} label="Border Radius" value={this.state.styling.styling.cardParagraph3.borderRadius} onChange={(e) => this.handleCardChange(e, "cardParagraph3", "borderRadius")} />
+
+
                     </Row>
                   </div>
                 </CollapsibleItem>
@@ -175,6 +185,7 @@ class Dashboard extends Component {
                   <div className='componentEditor'>
                     <Row>
                       <Input s={6} label="Text" value={this.state.styling.styling.cardButton.text} onChange={(e) => this.handleCardChange(e, "cardButton", "text")} />
+                      <Input s={6} label="Color" value={this.state.styling.styling.cardButton.color} onChange={(e) => this.handleCardChange(e, "cardButton", "color")} />
                       <Input s={6} label="Height" value={this.state.styling.styling.cardButton.height} onChange={(e) => this.handleCardChange(e, "cardButton", "height")} />
                       <Input s={6} label="Max Width" value={this.state.styling.styling.cardButton.maxWidth} onChange={(e) => this.handleCardChange(e, "cardButton", "maxWidth")} />
                       <Input s={6} label="Text Align" value={this.state.styling.styling.cardButton.textAlign} onChange={(e) => this.handleCardChange(e, "cardButton", "textAlign")} />
@@ -184,6 +195,7 @@ class Dashboard extends Component {
                       <Input s={6} label="Background Color" value={this.state.styling.styling.cardButton.backgroundColor} onChange={(e) => this.handleCardChange(e, "cardButton", "backgroundColor")} />
                       <Input s={6} label="Box Shadow" value={this.state.styling.styling.cardButton.boxShadow} onChange={(e) => this.handleCardChange(e, "cardButton", "boxShadow")} />
                       <Input s={6} label="Margin" value={this.state.styling.styling.cardButton.margin} onChange={(e) => this.handleCardChange(e, "cardButton", "margin")} />
+                      <Input s={6} label="Border Radius" value={this.state.styling.styling.cardButton.borderRadius} onChange={(e) => this.handleCardChange(e, "cardButton", "borderRadius")} />
                     </Row>
                   </div>
                 </CollapsibleItem>
@@ -204,7 +216,7 @@ var mockStyleObj = {
   "name": "Product Card",
   "styling": {
     "card": {
-      "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
+      "boxShadow": "8px 8px 8px 8px rgba(0, 0, 0, 0.2)",
       "maxWidth": "300px",
       "margin": "auto",
       "textAlign": "center",
@@ -212,32 +224,37 @@ var mockStyleObj = {
       "display": "block",
       "border": "0",
       "backgroundColor": "white",
+      "borderRadius": "25px",
     },
     "cardTitle": {
       "fontSize": "4.0rem",
       "fontFamily": "arial",
-      "text": "This is a demo",
+      "text": "Create a Card",
       "color": "black",
       "display": "block",
-      "textAlign": "center"
+      "textAlign": "center",
+      "backgroundColor": "",
+      "borderRadius": "25px"
     },
     "cardParagraph1": {
       "fontFamily": "arial",
-      "fontSize": "12px",
-      "text": "This is a test",
+      "fontSize": "24px",
+      "text": "It's seriously easy",
       "border": "0",
       "padding": "0px",
       "display": "block",
-      "color": "grey"
+      "color": "grey",
+      "backgroundColor": ""
     },
     "cardParagraph2": {
       "fontFamily": "arial",
-      "fontSize": "18px",
+      "fontSize": "15px",
       "border": "0",
       "padding": "0px",
       "display": "block",
-      "text": "This is a test",
-      "color": "black"
+      "text": "But if it's not, please let me know",
+      "color": "black",
+      "backgroundColor": ""
     },
     "cardParagraph3": {
       "fontFamily": "arial",
@@ -245,14 +262,17 @@ var mockStyleObj = {
       "border": "0",
       "padding": "0px",
       "display": "none",
-      "color": "black"
+      "color": "black",
+      "backgroundColor": ""
     },
     "cardImg": {
-      "src": "www.unsplash.com",
+      "src": "",
       "display": "none",
       "alt": "This is an image which will be used later on",
       "height": "auto",
       "width": "auto",
+      "minHeight": "",
+      "backgroundSize": ""
     },
     "cardButton": {
       "border": "name",
@@ -264,7 +284,8 @@ var mockStyleObj = {
       "fontSize": "18px",
       "padding": "12px",
       "display": "block",
-      "text": "This is a test"
+      "text": "We even have clickable buttons",
+      "borderRadius": "25px"
     }
 
   }
@@ -282,51 +303,60 @@ var mockStyleObj2 = {
       "fontFamily": "arial",
       "display": "block",
       "border": "0",
-      "backgroundColor": "pink",
+      "backgroundColor": "white",
+      "borderRadius": "25px"
     },
     "cardTitle": {
-      "fontSize": "4.0rem",
-      "fontFamily": "arial",
-      "text": "This is to show off an img",
-      "color": "black",
+      "fontSize": "",
+      "fontFamily": "",
+      "text": "",
+      "color": "",
+      "display": "none",
+      "textAlign": "",
+      "borderRadius": ""
+    },
+    "cardImg": {
+      "background": "url(https://images.unsplash.com/photo-1550544910-8f26817ba35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=2760&q=80)",
       "display": "block",
-      "textAlign": "center"
+      "alt": "This is an image which will be used later on",
+      "height": "auto",
+      "width": "100%",
+      "minHeight": "300px",
+      "backgroundSize": "cover",
+      "borderRadius": "25px 25px 0 0"
     },
     "cardParagraph1": {
       "fontFamily": "arial",
-      "fontSize": "12px",
-      "text": "This is a test",
+      "fontSize": "24px",
+      "text": "Riverbank",
       "border": "0",
       "padding": "0px",
       "display": "block",
-      "color": "grey"
+      "color": "black",
+      "borderRadius": "",
     },
     "cardParagraph2": {
       "fontFamily": "arial",
-      "fontSize": "18px",
+      "fontSize": "12px",
       "border": "0",
-      "padding": "0px",
+      "padding": "10px",
       "display": "block",
-      "text": "This is a test",
-      "color": "black"
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut maximus orci. Morbi consequat elementum ex sed eleifend. Phasellus quis sodales turpis, at ullamcorper purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur maximus, justo vel congue lobortis, justo odio aliquam felis, non cursus ante velit non orci. Quisque sodales, nisl quis tincidunt ultrices, dolor neque vulputate tortor, vitae egestas ante felis sed magna. Integer dolor velit, ultrices et maximus consequat, finibus sed ante. Morbi venenatis ullamcorper eros id laoreet.",
+      "color": "black",
+      "borderRadius": "",
     },
     "cardParagraph3": {
+      "text": "",
       "fontFamily": "arial",
       "fontSize": "12px",
       "border": "0",
       "padding": "0px",
       "display": "none",
-      "color": "black"
-    },
-    "cardImg": {
-      "background": "url(https://www.edx.org/sites/default/files/course/image/promoted/course_image_csmm_103x_378x225.jpg) no-repeat",
-      "display": "block",
-      "alt": "This is an image which will be used later on",
-      "height": "400px",
-      "width": "auto",
+      "color": "black",
+      "borderRadius": ""
     },
     "cardButton": {
-      "border": "name",
+      "border": "",
       "value": "0",
       "backgroundColor": "#000",
       "color": "white",
@@ -334,8 +364,9 @@ var mockStyleObj2 = {
       "width": "100%",
       "fontSize": "18px",
       "padding": "12px",
-      "display": "block",
-      "text": "This is a test"
+      "display": "none",
+      "text": "",
+      "borderRadius": ""
     }
 
   }

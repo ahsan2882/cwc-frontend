@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import './CardTemplate.css';
 class CardTemplate extends Component {
 
-    addOrangeBorder = (elementToHighlight, property) => {
-        console.log(property);
-    }
-
     render() {
         let cardTitle = this.props.styling.styling.cardTitle;
         let cardBody = this.props.styling.styling.card;
@@ -14,9 +10,6 @@ class CardTemplate extends Component {
         let cardParagraph3 = this.props.styling.styling.cardParagraph3;
         let cardImg = this.props.styling.styling.cardImg;
         let cardButton = this.props.styling.styling.cardButton;
-        let highlightedProperty = this.props.isHighlighted;
-        console.log(highlightedProperty);
-        this.addOrangeBorder(highlightedProperty, cardBody);
 
         return (
             <div>
@@ -26,7 +19,7 @@ class CardTemplate extends Component {
                     <p style={cardParagraph1}>{cardParagraph1.text}</p>
                     <p style={cardParagraph2}>{cardParagraph2.text}</p>
                     <p style={cardParagraph3}>{cardParagraph3.text}</p>
-                    <p><button style={cardButton}>{cardButton.text}</button></p>
+                    <button style={cardButton}>{cardButton.text}</button>
                 </div>
             </div>
         );

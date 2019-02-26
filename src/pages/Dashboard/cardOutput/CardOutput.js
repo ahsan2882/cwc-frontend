@@ -38,6 +38,9 @@ class CardOutput extends Component {
             if (key === 'fontFamily') return 'font-family';
             if (key === 'backgroundColor') return 'background-color';
             if (key === 'fontSize') return 'font-size';
+            if (key === 'borderRadius') return 'border-radius';
+            if (key === 'backgroundSize') return 'background-size';
+            if (key === 'minHeight') return 'min-height';
             return key;
         })
         return updatedCSS;
