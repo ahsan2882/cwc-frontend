@@ -211,7 +211,7 @@ class Dashboard extends Component {
 
 
 
-var mockStyleObj = {
+let mockStyleObj = {
   "template": "Product Card",
   "name": "Product Card",
   "styling": {
@@ -291,7 +291,7 @@ var mockStyleObj = {
   }
 }
 
-var mockStyleObj2 = {
+let mockStyleObj2 = {
   "template": "Product Card",
   "name": "Image Card",
   "styling": {
@@ -372,12 +372,177 @@ var mockStyleObj2 = {
   }
 }
 
+let mockStyleObj3 = {
+  "template": "Product Card",
+  "name": "Hiragana Card",
+  "styling": {
+    "card": {
+      "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
+      "maxWidth": "400px",
+      "margin": "auto",
+      "textAlign": "center",
+      "fontFamily": "arial",
+      "display": "block",
+      "border": "0",
+      "backgroundColor": "pink",
+      "borderRadius": "25px"
+    },
+    "cardTitle": {
+      "fontSize": "",
+      "fontFamily": "",
+      "text": "",
+      "color": "",
+      "display": "none",
+      "textAlign": "",
+      "borderRadius": ""
+    },
+    "cardImg": {
+      "background": " url(https://www.charbase.com/images/glyph/12354) ",
+      "display": "block",
+      "alt": "This is an image which will be used later on",
+      "height": "auto",
+      "width": "100%",
+      "minHeight": "400px",
+      "backgroundSize": "",
+      "borderRadius": "25px 25px 0 0"
+    },
+    "cardParagraph1": {
+      "fontFamily": "roboto",
+      "fontSize": "30px",
+      "text": "Hirgana",
+      "border": "0",
+      "padding": "0px",
+      "display": "block",
+      "color": "white",
+      "borderRadius": "",
+    },
+    "cardParagraph2": {
+      "fontFamily": "roboto",
+      "fontSize": "16px",
+      "border": "0",
+      "padding": "10px",
+      "display": "block",
+      "text": "Hiragana is a Japanese syllabary, one component of the Japanese writing system, along with katakana, kanji, and in some cases rōmaji. It is a phonetic lettering system. The word hiragana literally means ordinary or simple kana. Hiragana and katakana are both kana systems.",
+      "color": "white",
+      "borderRadius": "0 0 25px 25px",
+      "backgroundColor": "black"
+    },
+    "cardParagraph3": {
+      "text": "",
+      "fontFamily": "arial",
+      "fontSize": "12px",
+      "border": "0",
+      "padding": "0px",
+      "display": "none",
+      "color": "black",
+      "borderRadius": ""
+    },
+    "cardButton": {
+      "border": "",
+      "value": "0",
+      "backgroundColor": "#000",
+      "color": "white",
+      "textAlign": "center",
+      "width": "100%",
+      "fontSize": "18px",
+      "padding": "12px",
+      "display": "none",
+      "text": "",
+      "borderRadius": ""
+    }
 
+  }
+}
+
+let mockStyleObj4 = {
+  "template": "Product Card",
+  "name": "Recipe Card",
+  "styling": {
+    "card": {
+      "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
+      "maxWidth": "200px",
+      "margin": "auto",
+      "textAlign": "center",
+      "fontFamily": "arial",
+      "display": "block",
+      "border": "0",
+      "backgroundColor": "white",
+      "borderRadius": "25px"
+    },
+    "cardTitle": {
+      "fontSize": "",
+      "fontFamily": "",
+      "text": "",
+      "color": "",
+      "display": "none",
+      "textAlign": "",
+      "borderRadius": ""
+    },
+    "cardImg": {
+      "background": "url(https://www.lifeloveandsugar.com/wp-content/uploads/2014/02/Like_A_Box_Mix_Brownies4.jpg)",
+      "display": "block",
+      "alt": "This is an image which will be used later on",
+      "height": "auto",
+      "width": "100%",
+      "minHeight": "200px",
+      "backgroundSize": "cover",
+      "borderRadius": "25px 25px 0 0"
+    },
+    "cardParagraph1": {
+      "fontFamily": "roboto",
+      "fontSize": "18px",
+      "text": "Brownie Recipe",
+      "border": "0",
+      "padding": "0px",
+      "display": "block",
+      "color": "black",
+      "borderRadius": "",
+    },
+    "cardParagraph2": {
+      "fontFamily": "roboto",
+      "fontSize": "16px",
+      "border": "0",
+      "padding": "10px",
+      "display": "none",
+      "text": "",
+      "color": "black",
+      "borderRadius": "0 0 25px 25px",
+      "backgroundColor": "black"
+    },
+    "cardParagraph3": {
+      "text": "",
+      "fontFamily": "arial",
+      "fontSize": "12px",
+      "border": "0",
+      "padding": "0px",
+      "display": "none",
+      "color": "black",
+      "borderRadius": ""
+    },
+    "cardButton": {
+      "border": "2px solid pink",
+      "value": "0",
+      "backgroundColor": "white",
+      "color": "grey",
+      "textAlign": "center",
+      "width": "100%",
+      "fontSize": "18px",
+      "padding": "12px",
+      "display": "block",
+      "text": "Click for Steps",
+      "borderRadius": "0 0 25px 25px",
+      "fontFamily": "roboto"
+    }
+
+  }
+}
 
 
 var mockJson = [
   mockStyleObj,
-  mockStyleObj2
+  mockStyleObj2,
+  mockStyleObj3,
+  mockStyleObj4
 ]
 
 export default Dashboard;
